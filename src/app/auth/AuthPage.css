@@ -1,0 +1,6 @@
+.custom-select {
+    appearance: none;
+    background: url('/icons8-arrow-down-30.png') no-repeat right 10px center;
+    background-size: 15px;
+    padding-right: 30px;
+  }
