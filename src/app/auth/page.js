@@ -198,13 +198,13 @@ const AuthPage = () => {
                       className="text-blue-500 underline cursor-pointer"
                       onClick={handleShowTerms}
                     >
-                      <b>Terms & Conditions</b>
+                      <b>Terms &amp; Conditions</b>
                     </span>
               </div>
 
               <div className="text-center mt-4">
                 <p>
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <a
                     href="#"
                     className="text-blue-500"
@@ -360,7 +360,7 @@ const AuthPage = () => {
                       className="text-blue-500 underline cursor-pointer"
                       onClick={handleShowTerms}
                     >
-                      <b>Terms & Conditions</b>
+                      <b>Terms &amp; Conditions</b>
                     </span>
                   </span>
                 </div>
