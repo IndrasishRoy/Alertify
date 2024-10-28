@@ -11,8 +11,12 @@ const Home = () => {
   const [userData, setUserData] = useState(null);
   const [isDay, setIsDay] = useState(true);
   const router = useRouter();
-  if(typeof window !== "undefined"){
-  const loginCreds = JSON.parse(localStorage.getItem("loginCreds")); // Retrieve login credentials from local storage
+  // Declare loginCreds outside of the if block
+  let loginCreds = null;
+
+  // Assign loginCreds only if in browser
+  if (typeof window !== "undefined") {
+    loginCreds = JSON.parse(localStorage.getItem("loginCreds")); // Retrieve login credentials from local storage
   }
   
   // Function to fetch user data from the API
