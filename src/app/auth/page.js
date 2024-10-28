@@ -54,7 +54,7 @@ const AuthPage = () => {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      if (response.ok && typeof window !== "undefined") {
         localStorage.setItem("loginCreds", JSON.stringify({ email, password }));
         router.push("/otp-verification");
       } else {
@@ -88,7 +88,7 @@ const AuthPage = () => {
           (user) => user.email === email && user.password === password
         );
 
-        if (currentUser) {
+        if (currentUser && typeof window !== "undefined") {
           localStorage.setItem("authToken", "your-auth-token");
           localStorage.setItem(
             "loginCreds",

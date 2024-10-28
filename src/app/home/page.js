@@ -44,9 +44,11 @@ const Home = () => {
   // Function to open the modal
   const openModal = (section) => {
     setActiveSection(section);
+    if(typeof window !== "undefined"){
     if (section === "profile" && loginCreds?.email && loginCreds?.password) {
       fetchUserData(loginCreds.email, loginCreds.password); // Fetch user data based on login credentials
     }
+  }
   };
 
   // Function to close the modal
@@ -57,7 +59,9 @@ const Home = () => {
 
   // Function to handle logout
   const handleLogout = () => {
+    if(typeof window !== "undefined"){
     localStorage.removeItem("loginCreds");
+    }
     console.log("loginCreds removed");
     console.clear();
     router.push("/auth");
