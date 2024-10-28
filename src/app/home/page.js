@@ -11,8 +11,10 @@ const Home = () => {
   const [userData, setUserData] = useState(null);
   const [isDay, setIsDay] = useState(true);
   const router = useRouter();
+  if(typeof window !== "undefined"){
   const loginCreds = JSON.parse(localStorage.getItem("loginCreds")); // Retrieve login credentials from local storage
-
+  }
+  
   // Function to fetch user data from the API
   const fetchUserData = async (email, password) => {
     try {
@@ -44,17 +46,14 @@ const Home = () => {
   // Function to open the modal
   const openModal = (section) => {
     setActiveSection(section);
-<<<<<<< HEAD
     if(typeof window !== "undefined"){
     if (section === "profile" && loginCreds?.email && loginCreds?.password) {
       fetchUserData(loginCreds.email, loginCreds.password); // Fetch user data based on login credentials
     }
   }
-=======
     if (section === "profile" && loginCreds?.email && loginCreds?.password) {
       fetchUserData(loginCreds.email, loginCreds.password); // Fetch user data based on login credentials
     }
->>>>>>> ae0f5209876ac3b090ee5a5da48891123d83dce4
   };
 
   // Function to close the modal
@@ -65,13 +64,10 @@ const Home = () => {
 
   // Function to handle logout
   const handleLogout = () => {
-<<<<<<< HEAD
     if(typeof window !== "undefined"){
     localStorage.removeItem("loginCreds");
-    }
-=======
     localStorage.removeItem("loginCreds");
->>>>>>> ae0f5209876ac3b090ee5a5da48891123d83dce4
+    }
     console.log("loginCreds removed");
     console.clear();
     router.push("/auth");
